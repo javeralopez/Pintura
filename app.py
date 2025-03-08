@@ -57,13 +57,15 @@ import streamlit as st
 st.title("Calculadora de Pintura")
 
 # Descripción
-st.write("Un litro de pintura cubre 9 metros cuadrados de pared. Ingresa el área que deseas cubrir para calcular la cantidad de pintura necesaria.")
+st.write("Un litro de pintura cubre 9 metros cuadrados de pared. Ingresa las dimensiones de la pared para calcular la cantidad de pintura necesaria.")
 
-# Entrada de usuario: Área a cubrir
-area = st.number_input("Ingresa el área en metros cuadrados:", min_value=0.0, step=0.1)
+# Entrada de usuario: Ancho y largo de la pared
+ancho = st.number_input("Ingresa el ancho de la pared en metros:", min_value=0.0, step=0.1)
+largo = st.number_input("Ingresa el largo de la pared en metros:", min_value=0.0, step=0.1)
 
-# Cálculo de pintura necesaria
+# Cálculo del área y pintura necesaria
+area = ancho * largo
 litros_necesarios = area / 9
 
 # Mostrar resultado
-st.write(f"Para cubrir {area} metros cuadrados, necesitas {litros_necesarios:.2f} litros de pintura.")
+st.write(f"Para cubrir una pared de {ancho} metros de ancho y {largo} metros de largo (total {area:.2f} metros cuadrados), necesitas {litros_necesarios:.2f} litros de pintura.")
