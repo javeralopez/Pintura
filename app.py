@@ -48,3 +48,22 @@ if st.button("Calcular Pintura"):
   litros, costo = calcular_pintura(ancho_pared, alto_pared, precio_litro_pintura)
   st.write(f"Necesitará {litros:.2f} litros de pintura.")
   st.write(f"El costo total de la pintura será: {costo:.2f}")
+
+
+
+import streamlit as st
+
+# Título de la aplicación
+st.title("Calculadora de Pintura")
+
+# Descripción
+st.write("Un litro de pintura cubre 9 metros cuadrados de pared. Ingresa el área que deseas cubrir para calcular la cantidad de pintura necesaria.")
+
+# Entrada de usuario: Área a cubrir
+area = st.number_input("Ingresa el área en metros cuadrados:", min_value=0.0, step=0.1)
+
+# Cálculo de pintura necesaria
+litros_necesarios = area / 9
+
+# Mostrar resultado
+st.write(f"Para cubrir {area} metros cuadrados, necesitas {litros_necesarios:.2f} litros de pintura.")
