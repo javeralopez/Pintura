@@ -38,23 +38,13 @@ if st.button("Calcular Área del Rectángulo"):
   area_rectangulo = calcular_area_rectangulo(largo_rectangulo, ancho_rectangulo)
   st.write(f"El área del rectángulo es: {area_rectangulo}")
 
-# Cálculo de pintura
-st.header("Calculadora de Pintura")
-ancho_pared = st.number_input("Ingrese el ancho de la pared (metros):", value=0.0)
-alto_pared = st.number_input("Ingrese el alto de la pared (metros):", value=0.0)
-precio_litro_pintura = st.number_input("Ingrese el precio por litro de pintura:", value=0.0)
-
-if st.button("Calcular Pintura"):
-  litros, costo = calcular_pintura(ancho_pared, alto_pared, precio_litro_pintura)
-  st.write(f"Necesitará {litros:.2f} litros de pintura.")
-  st.write(f"El costo total de la pintura será: {costo:.2f}")
 
 
 
 import streamlit as st
 
 # Título de la aplicación
-st.title("Calculadora de Pintura")
+st.title("Calculadora de Pintura (RECTANGULO)")
 
 # Descripción
 st.write("Un litro de pintura cubre 9 metros cuadrados de pared. Ingresa las dimensiones de la pared y otros detalles para calcular la cantidad de pintura y thinner necesarios, y el costo total.")
